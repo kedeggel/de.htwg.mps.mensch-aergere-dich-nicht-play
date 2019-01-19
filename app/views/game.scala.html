@@ -1,0 +1,6 @@
+@import play.twirl.api.HtmlFormat._
+@(str: String)
+
+@main("HTWG Mensch ärgere dich nicht") {
+    @Html(escape(str).toString.replace("\n", "<br />"))
+}
