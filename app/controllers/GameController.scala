@@ -15,7 +15,6 @@ class GameController @Inject()(cc: ControllerComponents)
   init()
 
   def requestHumanCount(min: Int, max: Int) = Action {
-    println("requestHumanCount")
     Ok(
       views.html
         .game("Please insert number of Human Players [" + min + "-" + max + "]")

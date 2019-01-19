@@ -36,11 +36,9 @@ class WuiActor extends Actor {
   def handleNumber(number: Int) = {
     if (noPlayers) {
       lastSender ! HumanCount(number)
-      println("WUI: handle " + number)
       currentString = "Number of players: " + number + "\nGo back to \'/game\'"
       noPlayers = false
     } else if (reqMove) {
-      println("WUI: reqMove")
       lastSender ! ExecuteMove(Some(number))
       reqMove = false
     } else {
@@ -67,13 +65,11 @@ class WuiActor extends Actor {
       currentString = "Please enter number of Human Players [" + min + "-" + max + "]"
 
     case ShowBoard(pegs) =>
-      println("WUI: ShowBoard")
       boardString = Board.toString(pegs).replace(' ', '_')
       currentString = boardString
 
     case RequestRollDice(player) =>
       mayRoll = true
-      println("WUI: RequestRollDice")
       val tmp = currentString
       currentString = ""
       if (cantMove) {
