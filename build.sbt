@@ -1,4 +1,4 @@
-name := """play-scala-starter-example"""
+name := """mensch-aergere-dich-nicht"""
 
 version := "1.0-SNAPSHOT"
 
